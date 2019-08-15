@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import {View, Text} from 'react-native';
 import { TouchableHighlight } from 'react-native-gesture-handler';
 
-export default class ChatScreen extends Component {
+export default class BookScreen extends Component {
     render() {
         return (
             <View>

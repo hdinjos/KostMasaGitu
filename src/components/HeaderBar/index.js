@@ -8,7 +8,7 @@ export default class HeaderBar extends React.Component {
         return (
             <View style={styles.textHeader}>
                 <Text style={styles.textHeaderStyle}>AnaKost</Text>
-                <Icon name='comments' style={styles.iconHeaderChat} size={30} />
+                <Icon name='clipboard-list' style={styles.iconHeaderChat} size={30} />
             </View>
         )
     }

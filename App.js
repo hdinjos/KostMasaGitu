@@ -6,7 +6,7 @@ import Icon from 'react-native-vector-icons/FontAwesome5';
 
 import HomeScreen from './src/screens/HomeScreen';
 import ListScreen from './src/screens/ListScreen';
-import ChatScreen from './src/screens/ChatScreen';
+import BookScreen from './src/screens/BookScreen';
 import AccountScreen from "./src/screens/AccountScreen";
 
 const BottomNavigator = createMaterialBottomTabNavigator({
@@ -30,13 +30,13 @@ const BottomNavigator = createMaterialBottomTabNavigator({
           </View>),  
     }  
   },
-  Chat: {
-    screen: ChatScreen,
+  Book: {
+    screen: BookScreen,
     navigationOptions:{  
-      tabBarLabel:'Chat',  
+      tabBarLabel:'Book',  
       tabBarIcon: ({ tintColor }) => (  
           <View>  
-              <Icon style={[{color: tintColor}]} size={20} name={'comment-dots'}/>  
+              <Icon style={[{color: tintColor}]} size={20} name={'cart-arrow-down'}/>  
           </View>),  
     }  
   },
