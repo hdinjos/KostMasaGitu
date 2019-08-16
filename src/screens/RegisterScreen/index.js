@@ -89,6 +89,21 @@ export default class RegisterScreen extends Component {
                             <Text style={{fontSize: 18, color: '#fff', fontWeight: 'bold', textTransform: 'uppercase'}}>Register</Text>
                         </TouchableHighlight>
                     </View>
+
+                    <View style={{
+                        marginHorizontal: 20,
+                        width: '80%',
+                        flexDirection: 'row',
+                        justifyContent: 'space-between',
+                    }}>
+                        <TouchableHighlight onPress={() => this.props.navigation.navigate('Register', {role: 0})}>
+                            <Text style={{color: '#00d'}}>Create User Account</Text>
+                        </TouchableHighlight>
+
+                        <TouchableHighlight onPress={() => this.props.navigation.navigate('Login')}>
+                            <Text style={{color: '#00910a'}}>Login Account</Text>
+                        </TouchableHighlight>
+                    </View>
                 </View>
             )
         } else {
@@ -160,6 +175,21 @@ export default class RegisterScreen extends Component {
                             borderRadius: 100/15,
                         }}>
                             <Text style={{fontSize: 18, color: '#fff', fontWeight: 'bold', textTransform: 'uppercase'}}>Register</Text>
+                        </TouchableHighlight>
+                    </View>
+
+                    <View style={{
+                        marginHorizontal: 20,
+                        width: '80%',
+                        flexDirection: 'row',
+                        justifyContent: 'space-between',
+                    }}>
+                        <TouchableHighlight onPress={() => this.props.navigation.navigate('Register', {role: 1})}>
+                            <Text style={{color: '#00d'}}>Create Owner Account</Text>
+                        </TouchableHighlight>
+
+                        <TouchableHighlight onPress={() => this.props.navigation.navigate('Login')}>
+                            <Text style={{color: '#00910a'}}>Login Account</Text>
                         </TouchableHighlight>
                     </View>
                 </View>

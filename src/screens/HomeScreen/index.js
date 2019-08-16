@@ -5,8 +5,11 @@ import Icon from 'react-native-vector-icons/FontAwesome5';
 import HeaderBar from '../../components/HeaderBar';
 import PromoImage from '../../components/PromoImage';
 import PopularCity from '../../components/PopularCity';
+import AdScreen from '../AdScreen';
+import { createStackNavigator, createAppContainer } from 'react-navigation';
+import DetailScreen from '../DetailScreen';
 
-export default class HomeScreen extends Component {
+class HomeScreen extends Component {
 
     constructor(){
         super();
@@ -77,7 +80,7 @@ export default class HomeScreen extends Component {
                         <View style={styles.searchBar}>
                             <Text style={{fontSize: 20, fontWeight: 'bold'}}>Hai,</Text>
                             <Text style={{fontSize: 24, fontWeight: 'bold'}}>Lagi Butuh {this.state.menuTab}?</Text>
-                            <TextInput onFocus={() => alert('Search Input')} placeholder="Masukan alamat atau nama tempat" style={{borderColor: '#cf0e04', borderRadius: 6, borderWidth:1, marginTop: 10, paddingLeft: 50, paddingVertical: 8,backgroundColor: '#e3e6e4'}} />
+                            <TextInput onFocus={() => this.props.navigation.navigate('List')} placeholder="Masukan alamat atau nama tempat" style={{borderColor: '#cf0e04', borderRadius: 6, borderWidth:1, marginTop: 10, paddingLeft: 50, paddingVertical: 8,backgroundColor: '#e3e6e4'}} />
                             <Icon name='search' style={{position: 'absolute', left: 30, bottom: 38}} color='#cf0e04' size={20} />
                         </View>
                         {/* Promo Component */}
@@ -94,7 +97,7 @@ export default class HomeScreen extends Component {
                         </View>
                         <View style={{backgroundColor:'white',padding: 10, flexDirection: 'row', justifyContent: 'space-between'}}>
                             <Text style={{fontWeight: 'bold', marginLeft: 5, fontSize: 14}}>Tertarik Mengiklankan kosmu ?</Text>
-                            <TouchableHighlight onPress={() => alert('Pasang iklan')} style={{
+                            <TouchableHighlight onPress={() => this.props.navigation.navigate('Iklan', {status: 1})} style={{
                                 backgroundColor: '#cf0e04', 
                                 paddingHorizontal: 8, 
                                 paddingVertical: 3, 
@@ -125,6 +128,25 @@ export default class HomeScreen extends Component {
         )
     }
 }
+
+const AppNavigator = createStackNavigator({
+    Home: {
+        screen: HomeScreen
+    },
+    Iklan : {
+        screen: AdScreen
+    },
+    Detail: {
+        screen: DetailScreen,
+    }
+},
+{
+    initialRouteName: 'Home',
+    headerMode: 'none',
+    mode: 'modal'
+});
+
+export default createAppContainer(AppNavigator);
 
 const styles = StyleSheet.create({
     container: {

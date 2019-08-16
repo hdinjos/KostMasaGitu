@@ -6,8 +6,8 @@ import Icon from 'react-native-vector-icons/FontAwesome5';
 
 import HomeScreen from './src/screens/HomeScreen';
 import ListScreen from './src/screens/ListScreen';
-import BookScreen from './src/screens/BookScreen';
 import AccountScreen from "./src/screens/AccountScreen";
+import BookListScreen from './src/screens/BookListScreen';
 
 const BottomNavigator = createMaterialBottomTabNavigator({
   Home: {
@@ -28,15 +28,15 @@ const BottomNavigator = createMaterialBottomTabNavigator({
           <View>  
               <Icon style={[{color: tintColor}]} size={20} name={'list-alt'}/>  
           </View>),  
-    }  
+    }
   },
-  Book: {
-    screen: BookScreen,
+  BookList: {
+    screen: BookListScreen,
     navigationOptions:{  
-      tabBarLabel:'Book',  
+      tabBarLabel:'Book List',  
       tabBarIcon: ({ tintColor }) => (  
           <View>  
-              <Icon style={[{color: tintColor}]} size={20} name={'cart-arrow-down'}/>  
+              <Icon style={[{color: tintColor}]} size={20} name={'clipboard-list'}/>  
           </View>),  
     }  
   },

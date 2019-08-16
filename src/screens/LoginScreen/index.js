@@ -2,8 +2,11 @@ import React, {Component} from 'react';
 import {View, Text, TextInput, TouchableHighlight} from 'react-native';
 
 import Icon from 'react-native-vector-icons/FontAwesome5'
+import { createStackNavigator, createAppContainer } from 'react-navigation';
 
-export default class LoginSreen extends Component {
+import RegisterScreen from '../RegisterScreen';
+
+class LoginSreen extends Component {
     render() {
         return (
             <View style={{
@@ -58,8 +61,37 @@ export default class LoginSreen extends Component {
                         <Text style={{fontSize: 18, color: '#fff', fontWeight: 'bold', textTransform: 'uppercase'}}>Login</Text>
                     </TouchableHighlight>
                 </View>
+
+                <View style={{
+                    marginHorizontal: 20,
+                    width: '80%',
+                    flexDirection: 'row',
+                    justifyContent: 'space-between',
+                }}>
+                    <TouchableHighlight onPress={() => this.props.navigation.navigate('Register')}>
+                        <Text style={{color: '#00d'}}>Create Account</Text>
+                    </TouchableHighlight>
+
+                    <TouchableHighlight>
+                        <Text>Forgot Password?</Text>
+                    </TouchableHighlight>
+                </View>
             </View>
         )
     }
 }
 
+const AppNavigator = createStackNavigator({
+    Login: {
+        screen : LoginSreen,
+    },
+    Register: {
+        screen: RegisterScreen
+    }
+}, 
+{
+    initialRouteName: 'Login',
+    headerMode: 'none',
+})
+
+export default createAppContainer(AppNavigator);

@@ -1,5 +1,5 @@
 import React from 'react';
-import {View, Text, StyleSheet} from 'react-native';
+import {View, Text, StyleSheet, TouchableHighlight} from 'react-native';
 
 import Icon from 'react-native-vector-icons/FontAwesome5'
 
@@ -8,7 +8,9 @@ export default class HeaderBar extends React.Component {
         return (
             <View style={styles.textHeader}>
                 <Text style={styles.textHeaderStyle}>AnaKost</Text>
-                <Icon name='clipboard-list' style={styles.iconHeaderChat} size={30} />
+                <TouchableHighlight style={styles.iconHeaderChat}>
+                    <Icon name='angellist' size={30} color='#fff' />
+                </TouchableHighlight>
             </View>
         )
     }
@@ -29,7 +31,6 @@ const styles = StyleSheet.create({
     },
     iconHeaderChat: {
         position: 'absolute',
-        color: '#fff',
         right: 10,
         top: 5,
         padding: 5,
