@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {View, Text, TouchableHighlight, TextInput} from 'react-native';
+import {View, Image, ScrollView, Text, TouchableHighlight, TextInput, TouchableOpacity, StyleSheet} from 'react-native';
 
 import Icon from 'react-native-vector-icons/FontAwesome5';
 
@@ -125,14 +125,85 @@ export default class ListScreen extends Component {
                         }}>
                             <Text style={{color : this.state.colorTabs2, fontSize: 18, fontWeight: 'bold'}}>Lihat Daftar</Text>
                         </TouchableHighlight>
+                        
                     </View>
-
-                    <View style={{flex : 1, paddingHorizontal: 17}}>
-
+                    {/* tab list kos */}
+                    <View style={styles.container}>
+                    <ScrollView>
+                <TouchableOpacity style={styles.card}>
+                    <Image style={styles.cardImage} source={{uri:'http://blog.unnes.ac.id/sfatimah77/wp-content/uploads/sites/275/2015/11/Tips-Mencari-Tempat-Kos-di-Jogja.jpg'}}/>
+                    <Text style={styles.cardTextPay}>$900 / Month</Text>
+                    <Text style={styles.cardTextAddress}> Kos Blok 10, Jl. Lingkar Ngembal Kulo Kudus</Text>
+                        <Text style={styles.cardTextBook}>Bisa Booking</Text>
+                    <Text style={styles.cardTextNote}> Semua Masih Kosong </Text>
+                </TouchableOpacity>
+                <TouchableOpacity style={styles.card}>
+                    <Image style={styles.cardImage} source={{uri:'http://blog.unnes.ac.id/sfatimah77/wp-content/uploads/sites/275/2015/11/Tips-Mencari-Tempat-Kos-di-Jogja.jpg'}}/>
+                    <Text style={styles.cardTextPay}>$900 / Month</Text>
+                    <Text style={styles.cardTextAddress}> Kos Blok 10, Jl. Lingkar Ngembal Kulo Kudus</Text>
+                        <Text style={styles.cardTextBook}>Bisa Booking</Text>
+                    <Text style={styles.cardTextNote}> Semua Masih Kosong </Text>
+                </TouchableOpacity>
+                <TouchableOpacity style={styles.card}>
+                    <Image style={styles.cardImage} source={{uri:'http://blog.unnes.ac.id/sfatimah77/wp-content/uploads/sites/275/2015/11/Tips-Mencari-Tempat-Kos-di-Jogja.jpg'}}/>
+                    <Text style={styles.cardTextPay}>$900 / Month</Text>
+                    <Text style={styles.cardTextAddress}> Kos Blok 10, Jl. Lingkar Ngembal Kulo Kudus</Text>
+                        <Text style={styles.cardTextBook}>Bisa Booking</Text>
+                    <Text style={styles.cardTextNote}> Semua Masih Kosong </Text>
+                </TouchableOpacity>
+                </ScrollView>
                     </View>
                 </View>
-            )
+            );
         }
     }
 }
 
+const styles = StyleSheet.create({
+    container: {
+        paddingTop:15,
+        backgroundColor: '#ffffff'
+    },
+     card: {
+        marginHorizontal: 20,
+        backgroundColor: '#fff',
+        borderRadius: 5,
+        marginBottom: 10,
+        paddingBottom: 4,
+        shadowColor: '#000',
+        shadowOpacity: 0.2,
+        shadowRadius: 1,
+        shadowOffset: {
+            width: 3,
+            height: 3
+        }
+    },
+    cardImage : {
+        width: '100%',
+        height: 200,
+        resizeMode: 'cover',
+        borderRadius: 5                
+    },
+    cardTextPay : {
+        padding:5 ,
+        fontSize: 16,
+        fontWeight: 'bold',
+        color: '#060404'
+    },
+    cardTextAddress: {
+        fontSize: 14,
+    },
+    cardTextNote: {
+        fontSize: 10,
+        color: '#9936e2'
+    },
+    cardTextBook: {
+    backgroundColor: 'red',
+    borderRadius: 25,
+    width: 105,
+    color: '#FFFFFF',
+    paddingRight: 10,
+    paddingLeft: 10
+    }
+    
+})

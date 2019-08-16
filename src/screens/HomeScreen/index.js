@@ -8,7 +8,6 @@ import PopularCity from '../../components/PopularCity';
 import AdScreen from '../AdScreen';
 import { createStackNavigator, createAppContainer } from 'react-navigation';
 import DetailScreen from '../DetailScreen';
-import ListScreen from '../ListScreen';
 
 class HomeScreen extends Component {
 
@@ -139,9 +138,6 @@ const AppNavigator = createStackNavigator({
     },
     Detail: {
         screen: DetailScreen,
-    },
-    List : {
-        screen: ListScreen,
     },
 },
 {
