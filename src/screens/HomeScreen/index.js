@@ -138,12 +138,12 @@ const AppNavigator = createStackNavigator({
     },
     Detail: {
         screen: DetailScreen,
+        mode : 'modal'
     }
 },
 {
     initialRouteName: 'Home',
     headerMode: 'none',
-    mode: 'modal'
 });
 
 export default createAppContainer(AppNavigator);
