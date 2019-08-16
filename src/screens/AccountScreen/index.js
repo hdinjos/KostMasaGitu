@@ -20,6 +20,21 @@ class AccountScreen extends React.Component {
                     justifyContent:'center',
                     alignItems: 'center'
                 }}>
+
+                <TouchableHighlight style={{
+                    width: 100,
+                    height:100,
+                    borderRadius: 150/2,
+                    backgroundColor: '#cf0e04',
+                    borderColor: '#bfbfbf',
+                    borderWidth: 2,
+                    justifyContent: 'center',
+                    alignItems: 'center',
+                    marginBottom: 12,
+                }}>
+                    <Icon name='sad-cry' size={60} color='#ededed' />
+                </TouchableHighlight>
+
                     <Text style={{
                         fontSize: 18,
                         fontWeight: '500',
@@ -78,9 +93,9 @@ class AccountScreen extends React.Component {
                             alignItems: 'center',
                             borderColor: '#d4cfcf',
                             borderWidth: 1.5,
-                            borderRadius: 100/15,
+                            borderRadius: 8,
                         }}>
-                            <Icon name='user-shield' size={40} color='#fff' />
+                            <Icon name='grin-beam' size={40} color='#fff' />
                         </TouchableHighlight>
                         <Text style={{
                             fontSize: 20,

@@ -40,6 +40,7 @@ export default class ListScreen extends Component {
     render() {
 
         const Tabs = this.state.tabs;
+        const kota = this.props.navigation.getParam('kota');
 
         if(Tabs === 1) {
             return (
@@ -51,7 +52,7 @@ export default class ListScreen extends Component {
                         paddingHorizontal: 15,
                         paddingVertical: 10,
                     }}>
-                        <TextInput autoFocus placeholder="Masukan alamat atau nama tempat" style={{borderColor: '#cf0e04', borderRadius: 6, borderWidth:1, marginVertical: 10, paddingLeft: 50, paddingVertical: 8,backgroundColor: '#e3e6e4'}} />
+                        <TextInput value={kota} autoFocus placeholder="Masukan alamat atau nama tempat" style={{borderColor: '#cf0e04', borderRadius: 6, borderWidth:1, marginVertical: 10, paddingLeft: 50, paddingVertical: 8,backgroundColor: '#e3e6e4'}} />
                         <Icon name='arrow-left' style={{position: 'absolute', left: 30, top: 30}} color='#cf0e04' size={20} onPress={() => this.props.navigation.goBack() } />
                     </View>
                     {/* Tab Menu */}
@@ -96,7 +97,7 @@ export default class ListScreen extends Component {
                         paddingHorizontal: 15,
                         paddingVertical: 10,
                     }}>
-                        <TextInput autoFocus={this.props.focus} placeholder="Masukan alamat atau nama tempat" style={{borderColor: '#cf0e04', borderRadius: 6, borderWidth:1, marginVertical: 10, paddingLeft: 50, paddingVertical: 8,backgroundColor: '#e3e6e4'}} />
+                        <TextInput value={kota} autoFocus={this.props.focus} placeholder="Masukan alamat atau nama tempat" style={{borderColor: '#cf0e04', borderRadius: 6, borderWidth:1, marginVertical: 10, paddingLeft: 50, paddingVertical: 8,backgroundColor: '#e3e6e4'}} />
                         <Icon name='arrow-left' style={{position: 'absolute', left: 30, top: 30}} color='#cf0e04' size={20} onPress={() => this.props.navigation.goBack() } />
                     </View>
                     {/* Tab Menu */}
